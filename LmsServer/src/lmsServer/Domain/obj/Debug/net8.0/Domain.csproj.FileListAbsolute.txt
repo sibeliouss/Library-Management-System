@@ -1,0 +1,12 @@
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/bin/Debug/net8.0/Domain.deps.json
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/bin/Debug/net8.0/Domain.dll
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/bin/Debug/net8.0/Domain.pdb
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/Domain.dll
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/refint/Domain.dll
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/Domain.pdb
+/Users/sozey/Downloads/Lms_Server-Update-master 2/src/lmsServer/Domain/obj/Debug/net8.0/ref/Domain.dll

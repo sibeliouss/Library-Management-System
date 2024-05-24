@@ -1,0 +1,44 @@
+using Application.Services.Repositories;
+using AutoMapper;
+using Domain.Entities;
+using NArchitecture.Core.Application.Pipelines.Caching;
+using NArchitecture.Core.Application.Requests;
+using NArchitecture.Core.Application.Responses;
+using NArchitecture.Core.Persistence.Paging;
+using MediatR;
+
+namespace Application.Features.Announcements.Queries.GetList;
+
+public class GetListAnnouncementQuery : IRequest<GetListResponse<GetListAnnouncementListItemDto>>, ICachableRequest
+{
+    public PageRequest PageRequest { get; set; }
+
+    public bool BypassCache { get; }
+    public string? CacheKey => $"GetListAnnouncements({PageRequest.PageIndex},{PageRequest.PageSize})";
+    public string? CacheGroupKey => "GetAnnouncements";
+    public TimeSpan? SlidingExpiration { get; }
+
+    public class GetListAnnouncementQueryHandler : IRequestHandler<GetListAnnouncementQuery, GetListResponse<GetListAnnouncementListItemDto>>
+    {
+        private readonly IAnnouncementRepository _announcementRepository;
+        private readonly IMapper _mapper;
+
+        public GetListAnnouncementQueryHandler(IAnnouncementRepository announcementRepository, IMapper mapper)
+        {
+            _announcementRepository = announcementRepository;
+            _mapper = mapper;
+        }
+
+        public async Task<GetListResponse<GetListAnnouncementListItemDto>> Handle(GetListAnnouncementQuery request, CancellationToken cancellationToken)
+        {
+            IPaginate<Announcement> announcements = await _announcementRepository.GetListAsync(
+                index: request.PageRequest.PageIndex,
+                size: request.PageRequest.PageSize, 
+                cancellationToken: cancellationToken
+            );
+
+            GetListResponse<GetListAnnouncementListItemDto> response = _mapper.Map<GetListResponse<GetListAnnouncementListItemDto>>(announcements);
+            return response;
+        }
+    }
+}
